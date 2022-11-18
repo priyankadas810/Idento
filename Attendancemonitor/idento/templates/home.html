@@ -1,0 +1,38 @@
+{% load static %}
+<h1>Welcome to home page</h1>
+
+{% block content %}
+    hello, {{request.user}}        
+    <a class="nav-link" href="{% url 'signout' %}" onMouseOver="this.style.color='red'"onMouseOut="this.style.color='green'">Logout </a> 
+    {% for info in retrieve_user %}
+    <div>
+        <p>{{ info.name_of_org }}</p>            
+            <label for="gender"><b>Name of Oganisation:-</b></label>
+              <select name="gender" id="gender">
+                <option value="">{{ info.name_of_org }}</option>
+                <option value="">{{ info.name_of_org }}</option>
+                <option value="">{{ info.name_of_org }}</option>
+              </select>
+    </div>
+    <div>
+        <p>Name:- </p>
+        <p>{{ info.name }}</p>
+    </div>
+    <div>
+        <p>Gender:-</p>
+        <p>{{ info.gender }}</p>
+    </div>
+    <div>
+        <p>Username:-</p>
+        <p>{{ info.username }}</p>
+    </div>
+    <div>
+        <p>Email:-</p>
+        <p>{{ info.email }}</p>
+    </div>
+    <div>
+        <p>User:-</p>
+        <p>{{ info.user }}</p>
+    </div>
+    {% endfor %}
+{% endblock %}

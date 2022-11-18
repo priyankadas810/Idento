@@ -1,0 +1,12 @@
+<h1>This is starting of page</h1>
+
+{% load static %}
+<h1>Welcome to home page</h1>
+
+{% block content %}
+            
+    <h3>Register as:</h3>
+    <p> <a class="nav-link" href="{% url 'userregister' %}" onMouseOver="this.style.color='red'"onMouseOut="this.style.color='green'">User </a> </p>
+    <p> <a class="nav-link" href="{% url 'adminregister' %}" onMouseOver="this.style.color='red'"onMouseOut="this.style.color='green'">Admin</a> </p>
+    <a class="nav-link" href="{% url 'signin' %}" onMouseOver="this.style.color='red'"onMouseOut="this.style.color='green'">Login </a>  
+{% endblock %}

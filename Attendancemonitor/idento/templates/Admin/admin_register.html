@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <body>
+      <div class="container">
+        
+          {% if messages %}
+            {% for msg in messages %}
+              
+          
+            {{msg}}
+          
+          </div>
+              {% endfor %}
+          {% endif %}  
+
+        <form method="POST" action> {% csrf_token %}
+        
+          <h1>Register</h1>
+          <p>Please fill in this form to create an account.</p>
+          <hr>
+          <div class="line" style="width: 95%;height: 15px;border-bottom: 1px solid white;  position: absolute;">
+               
+            <label for="nameoforg"><b>Name of Organization</b></label>
+            <input type="text" placeholder="Name of Organization" name="nameoforganization" id="nameoforganization">
+
+            <label for="year"><b>Foundation Year</b></label>
+            <input type="text" placeholder="Foundation Year" name="foundationyear" id="foundationyear">
+
+            <label for="number"><b>Contact Number</b></label>
+            <input type="text" placeholder="Contact" name="contact" id="contact">
+
+               
+            <label for="username"><b>Username</b></label>
+            <input type="text" placeholder="Enter your username" name="username" id="username">
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter your Email" name="email" id="email" >
+        
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter your Password" name="psw" id="psw">
+        
+            <label for="psw-repeat"><b>Confirm Password</b></label>
+            <input type="password" placeholder="Confirm your Password" name="psw-repeat" id="psw-repeat">
+            <hr>
+          
+            <button type="submit" class="registerbtn"> <a class="nav-link" href="{% url 'home' %}" ></a> Register</button>
+            </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+            <div class="container signin">
+              <p>Already have an account? <a href="#">Sign in</a></p>
+            </div>
+          </form>
+    </body>
+</html>

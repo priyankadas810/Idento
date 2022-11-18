@@ -1,0 +1,7 @@
+<h1>Enter otp here</h1>
+<form method="POST" action>
+    {% csrf_token %}
+    <label for="sendotp">Your OTP</label>
+    <input type="text" placeholder="Enter here" name="sendotp">
+    <button type='submit'> Submit OTP</button>
+</form>
